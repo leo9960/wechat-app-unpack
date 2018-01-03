@@ -61,3 +61,37 @@ https://www.bejson.com/convert/ox2str/
         });
     require("pages/index/index.js");
     ...
+
+### page-frame.html
+
+目前我分析了一小部分代码，写了个解析器，可以手动一个页面一个页面还原出wxml源码，但还无法解析变量（就是{{}}这一类的）
+
+新建一个test.html，将wxmlana文件夹下的analysis.js,ana.js引入
+
+新建一个z.js，然后从page-frame.html中找到以下这一段代码：
+
+    (function(z){var a=11;
+        function Z(ops){z.push(ops)};
+        ...
+    })(z);
+
+将其复制到z.js里，并在test.html中引入z.js。
+
+再从page-frame.html中找到以下这一段代码：（理论上有m0,m1,m2,...，分别对应不同的页面）
+
+    var m0=function(e,s,r,gg){
+        ...
+        return r
+    }
+
+复制替换“...代码...”后将以下代码写入test.html:
+
+    <script>
+        ...代码...
+        
+        var object_raw=m0("","",root,"");       //（理论上有m0,m1,m2,...，分别对应不同的页面）
+        console.log(object_raw);    //由wxml转成的对象
+        console.log(ana(object_raw));    //解析对象后生成的源码
+    </script>
+
+在控制台（console）就能看到生成的wxml源码
