@@ -33,3 +33,31 @@
           }
       }
     }
+
+中文<->16进制在线互转：
+
+https://www.bejson.com/convert/ox2str/
+
+### app-service.json
+
+    var __wxAppData = {};
+    var __wxRoute;
+    var __wxRouteBegin;
+    var global = {};
+
+    //一些第三方的js源码(所以不同小程序一般都不一样)
+    define("utils/util.js", function(require, module, exports, window,document,frames,self,location,navigator,localStorage,history,Caches,screen,alert,confirm,prompt,XMLHttpRequest,WebSocket,Reporter,webkit,WeixinJSCore){});
+    define("app.js", function(require, module, exports, window,document,frames,self,location,navigator,localStorage,history,Caches,screen,alert,confirm,prompt,XMLHttpRequest,WebSocket,Reporter,webkit,WeixinJSCore){});
+    require("app.js");
+    ...
+
+    //每个页面对应的js源码
+    __wxRoute = 'pages/index/index';//页面路由地址
+    __wxRouteBegin = true; 
+    define(
+        "pages/index/index.js", //js地址
+        function(require, module, exports, window,document,frames,self,location,navigator,localStorage,history,Caches,screen,alert,confirm,prompt,XMLHttpRequest,WebSocket,Reporter,webkit,WeixinJSCore){
+            //js源码
+        });
+    require("pages/index/index.js");
+    ...
