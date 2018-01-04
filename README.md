@@ -13,6 +13,8 @@ PHP版本：https://github.com/Clarence-pan/unpack-wxapkg
 
 JAVA版本：https://github.com/moqi2011/unweapp
 
+Kaitai Struct版本：https://github.com/coolzilj/kaitai_struct_format_for_wxapkg
+
 
 ## 目前分析如下:
 
