@@ -46,8 +46,16 @@ https://www.bejson.com/convert/ox2str/
     var global = {};
 
     //一些第三方的js源码(所以不同小程序一般都不一样)
-    define("utils/util.js", function(require, module, exports, window,document,frames,self,location,navigator,localStorage,history,Caches,screen,alert,confirm,prompt,XMLHttpRequest,WebSocket,Reporter,webkit,WeixinJSCore){});
-    define("app.js", function(require, module, exports, window,document,frames,self,location,navigator,localStorage,history,Caches,screen,alert,confirm,prompt,XMLHttpRequest,WebSocket,Reporter,webkit,WeixinJSCore){});
+    define(
+        "utils/util.js", 
+        function(require, module, exports, window,document,frames,self,location,navigator,localStorage,history,Caches,screen,alert,confirm,prompt,XMLHttpRequest,WebSocket,Reporter,webkit,WeixinJSCore){
+        ...
+        });
+    define(
+        "app.js", 
+        function(require, module, exports, window,document,frames,self,location,navigator,localStorage,history,Caches,screen,alert,confirm,prompt,XMLHttpRequest,WebSocket,Reporter,webkit,WeixinJSCore){
+        ...
+        });
     require("app.js");
     ...
 
@@ -64,7 +72,9 @@ https://www.bejson.com/convert/ox2str/
 
 ### page-frame.html
 
-目前我分析了一小部分代码，写了个解析器，可以手动一个页面一个页面还原出wxml源码，但还无法解析变量（就是{{}}这一类的）
+目前我分析了一小部分代码，写了个解析器，可以手动一个页面一个页面还原出wxml源码，~~但还无法解析变量（就是{{}}这一类的）~~
+
+2018-01-04更新：可以解析单变量形式（如{{index}}），但表达式形式的还无法解析
 
 新建一个test.html，将wxmlana文件夹下的analysis.js,ana.js引入
 
