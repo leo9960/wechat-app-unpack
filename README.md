@@ -1,7 +1,20 @@
 # wechat-app-unpack
 微信小程序解包心得
 
-目前分析如下:
+思路、源码：http://lrdcq.com/me/read.php/66.htm
+
+### 解包工具：
+
+Python2版本：https://gist.github.com/feix/32ab8f0dfe99aa8efa84f81ed68a0f3e
+
+Python3版本：https://gist.github.com/Integ/bcac5c21de5ea35b63b3db2c725f07ad
+
+PHP版本：https://github.com/Clarence-pan/unpack-wxapkg
+
+JAVA版本：https://github.com/moqi2011/unweapp
+
+
+## 目前分析如下:
 
 ### 目录
 
