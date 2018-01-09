@@ -97,6 +97,8 @@ https://www.bejson.com/convert/ox2str/
 
 2018-01-04更新：可以解析block以及wx:for、wx:key
 
+2018-01-09更新：修复部分bug，template模板组件还无法解析
+
 新建一个test.html，将wxmlana文件夹下的analysis.js,ana.js引入
 
 新建一个z.js，然后从page-frame.html中找到以下这一段代码：

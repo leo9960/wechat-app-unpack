@@ -16,7 +16,9 @@ function ana(raw){
                     str+=" "+j+"=\""+raw["attr"][j]+"\"";
                 }
             }
-            str+=">";
+            if(raw[i]!="virtual"){
+                str+=">";
+            }
             if(raw["children"]!=undefined){
                 
                 for(var k in raw["children"]){
