@@ -93,38 +93,46 @@ https://www.bejson.com/convert/ox2str/
 
 2018-01-04更新：~~可以解析单变量形式（如{{index}}），但表达式形式的还无法解析~~
 
-2018-01-04更新：可以解析单变量形式（如{{index}}）、表达式形式（如{{count?1:2}}）
+2018-01-04更新：~~可以解析单变量形式（如{{index}}）、表达式形式（如{{count?1:2}}）~~
 
-2018-01-04更新：可以解析block以及wx:for、wx:key
+2018-01-04更新：~~可以解析block以及wx:for、wx:key~~
 
-2018-01-09更新：修复部分bug，template模板组件还无法解析
+2018-01-09更新：~~修复部分bug，template模板组件还无法解析~~
 
-新建一个test.html，将wxmlana文件夹下的analysis.js,ana.js引入
+2018-01-09更新：想到一个新思路还原源码，不再需要手动拷贝代码出来，防止变量丢失
 
-新建一个z.js，然后从page-frame.html中找到以下这一段代码：
+打开page-frame.html，将文件夹（wxmlana）下的ana.js引入
 
-    (function(z){var a=11;
-        function Z(ops){z.push(ops)};
+        <script src="ana.js"></script>
+
+打开文件夹（wxmlana）下的analysis.js，按照对应的函数名称，替换page-frame.html中的函数
+
+        //原page-frame.html中的名称：
+        function _v(k) {...}
+        function _n(tag){...}
+        function $gwrt(should_pass_type_info){...}
+        function wfor(to_iter, func, env, _s, global, father, itemname, indexname, keyname, o){...}
+        if (path && e_[path]) {...}
+
+注释掉page-frame.html中的 nf_init() ：
+
         ...
-    })(z);
-
-将其复制到z.js里，并在test.html中引入z.js。
-
-再从page-frame.html中找到以下这一段代码：（理论上有m0,m1,m2,...，分别对应不同的页面）
-
-    var m0=function(e,s,r,gg){
+        //nf_init();
         ...
-        return r
-    }
 
-复制替换“...代码...”后将以下代码写入test.html:
+在chrome中打开page-frame.html，在控制台（console）中输入：
 
-    <script>
-        ...代码...
-        
-        var object_raw=m0("","",root,"");       //（理论上有m0,m1,m2,...，分别对应不同的页面）
-        console.log(object_raw);    //由wxml转成的对象
-        console.log(ana(object_raw));    //解析对象后生成的源码
-    </script>
+        //解析单个wxml
+        $gwx("...wxml地址...")();        //例如$gwx("./page/API/index.wxml")();
 
-在控制台（console）就能看到生成的wxml源码
+        //解析所有wxml
+        $gwx("ana")()
+
+即可获得源码
+
+#### 已知问题
+
+1.template模块组件会被自动加载进源码中
+
+2.会无视带有 wx:if 的组件，但其子组件还是会被还原出来的
+

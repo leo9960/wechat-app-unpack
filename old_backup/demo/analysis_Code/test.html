@@ -1,0 +1,132 @@
+<meta charset="UTF-8" />
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="analysis.js"></script>
+<script src="z.js"></script>
+<script src="ana.js"></script>
+<script>
+	var m0 = function (e, s, r, gg) {
+		var oB = _n('view')
+		_r(oB, 'class', 0, e, s, gg)
+		var xC = _n('view')
+		_r(xC, 'class', 1, e, s, gg)
+		var oD = _m('image', ['class', 2, 'src', 1], e, s, gg)
+		_(xC, oD)
+		var fE = _n('view')
+		_r(fE, 'class', 4, e, s, gg)
+		var cF = _o(5, e, s, gg)
+		_(fE, cF)
+		_(xC, fE)
+		_(oB, xC)
+		var hG = _n('view')
+		_r(hG, 'class', 6, e, s, gg)
+		var oH = _n('view')
+		_r(oH, 'class', 7, e, s, gg)
+		var cI = _v()
+		_(oH, cI)
+		var oJ = function (aL, lK, tM, gg) {
+			var bO = _n('view')
+			_r(bO, 'class', 10, aL, lK, gg)
+			var oP = _m('view', ['id', 9, 'bindtap', 2, 'class', 3], aL, lK, gg)
+			var xQ = _n('view')
+			_r(xQ, 'class', 13, aL, lK, gg)
+			var oR = _o(14, aL, lK, gg)
+			_(xQ, oR)
+			_(oP, xQ)
+			var fS = _m('image', ['class', 15, 'src', 1], aL, lK, gg)
+			_(oP, fS)
+			_(bO, oP)
+			var cT = _n('view')
+			_r(cT, 'class', 17, aL, lK, gg)
+			var hU = _n('view')
+			_r(hU, 'class', 18, aL, lK, gg)
+			var oV = _v()
+			_(hU, oV)
+			var cW = function (lY, oX, aZ, gg) {
+				var e2 = _m('navigator', ['class', 22, 'url', 1], lY, oX, gg)
+				var b3 = _n('view')
+				_r(b3, 'class', 24, lY, oX, gg)
+				var o4 = _o(25, lY, oX, gg)
+				_(b3, o4)
+				_(e2, b3)
+				var x5 = _n('view')
+				_r(x5, 'class', 26, lY, oX, gg)
+				_(e2, x5)
+				_(aZ, e2)
+				return aZ
+			}
+			_2(20, cW, aL, lK, gg, oV, 'page', 'index', '*item')
+			_(cT, hU)
+			_(bO, cT)
+			_(tM, bO)
+			return tM
+		}
+		_2(8, oJ, e, s, gg, cI, 'item', 'index', '{{item.id}}')
+		_(hG, oH)
+		_(oB, hG)
+		_(r, oB)
+		return r
+	}
+	var root = {
+		"tag": "page"
+	};
+	root.children = []
+	var object_raw0 = m0("", {}, root, "");
+	console.log(object_raw0);
+	console.log("m0:"+ana(object_raw0));
+	d_['./page/API/pages/action-sheet/action-sheet.wxml'] = {}
+	var m1 = function (e, s, r, gg) {
+		var f7 = e_['./page/API/pages/action-sheet/action-sheet.wxml'].i
+		_ai(f7, '../../../common/head.wxml', e_, './page/API/pages/action-sheet/action-sheet.wxml', 1, 1)
+		_ai(f7, '../../../common/foot.wxml', e_, './page/API/pages/action-sheet/action-sheet.wxml', 2, 2)
+		var c8 = _n('view')
+		_r(c8, 'class', 27, e, s, gg)
+		var h9 = _v()
+		_(c8, h9)
+		var o0 = _o(29, e, s, gg)
+		var cAB = _gd('./page/API/pages/action-sheet/action-sheet.wxml', o0, e_, d_)
+		if (cAB) {
+			var oBB = _1(28, e, s, gg)
+			var cur_globalf = gg.f
+			cAB(oBB, oBB, h9, gg)
+			gg.f = cur_globalf
+		} else _w(o0, './page/API/pages/action-sheet/action-sheet.wxml', 5, 16)
+		var lCB = _n('view')
+		_r(lCB, 'class', 30, e, s, gg)
+		var aDB = _n('view')
+		_r(aDB, 'class', 31, e, s, gg)
+		var tEB = _m('button', ['bindtap', 32, 'type', 1], e, s, gg)
+		var eFB = _o(34, e, s, gg)
+		_(tEB, eFB)
+		_(aDB, tEB)
+		_(lCB, aDB)
+		_(c8, lCB)
+		var bGB = _v()
+		_(c8, bGB)
+		var oHB = _o(35, e, s, gg)
+		var xIB = _gd('./page/API/pages/action-sheet/action-sheet.wxml', oHB, e_, d_)
+		if (xIB) {
+			var oJB = {}
+			var cur_globalf = gg.f
+			xIB(oJB, oJB, bGB, gg)
+			gg.f = cur_globalf
+		} else _w(oHB, './page/API/pages/action-sheet/action-sheet.wxml', 13, 16)
+		_(r, c8)
+		f7.pop()
+		f7.pop()
+		return r
+	}
+	e_["./page/API/pages/action-sheet/action-sheet.wxml"] = {
+		f: m1,
+		j: [],
+		i: [],
+		ti: ['../../../common/head.wxml', '../../../common/foot.wxml'],
+		ic: []
+	}
+	var root = {
+		"tag": "page"
+	};
+	root.children = []
+	var object_raw1 = m1("", {}, root, "");
+	console.log(object_raw1);
+	console.log("m1:"+ana(object_raw1));
+</script>

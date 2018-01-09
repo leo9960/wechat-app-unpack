@@ -6,30 +6,47 @@
 
 \analysis_Code 为还原wxml源码的示例
 
-### \analysis_Code\z.js
-
-该文件中的代码是复制\unpack_Code\page-frame.html中第1535行至第3319行，即：
-
-    (function (z) {
-		var a = 11;
-		function Z(ops) {
-			z.push(ops)
-		}
-        ...
-    })(z);
-
 ### \analysis_Code\test.html
 
-该文件中第8行至第69行的代码是复制\unpack_Code\page-frame.html中第3345行至第3406行(第3344行即为以下代码的所对应的wxml路径)，即：
+该文件为已经被替换好的page-frame.html
 
-    var m0 = function (e, s, r, gg) {
+在chrome中打开test.html，在控制台（console）中输入：
+
+        //解析单个wxml
+        $gwx("...wxml地址...")();        //例如$gwx("./page/API/index.wxml")();
+
+        //解析所有wxml
+        $gwx("ana")()
+
+即可获得源码
+
+### 自行尝试
+
+打开page-frame.html，将文件夹（wxmlana）下的ana.js引入
+
+        <script src="ana.js"></script>
+
+打开文件夹（wxmlana）下的analysis.js，按照对应的函数名称，替换page-frame.html中的函数
+
+        //原page-frame.html中的名称：
+        function _v(k) {...}        //第22行
+        function _n(tag){...}       //第34行
+        function $gwrt(should_pass_type_info){...}        //第103行
+        function wfor(to_iter, func, env, _s, global, father, itemname, indexname, keyname, o){...}       //第464行
+        if (path && e_[path]) {...}       //第9102行
+
+注释掉page-frame.html中的 nf_init() ：
+
         ...
-    }
+        //nf_init();        //第1309行
+        ...
 
-要想获取其他wxml源码同理，在page-frame.html中找到对应路径下的代码（即var m0=...或var m1=...）
+在chrome中打开page-frame.html，在控制台（console）中输入：
 
-复制到test.html中，并加上 
+        //解析单个wxml
+        $gwx("...wxml地址...")();        //例如$gwx("./page/API/index.wxml")();
 
-    var object_raw=m0("",{},root,"");   //或者 m1("",{},root,"") ，取决于复制的代码
-    console.log(object_raw);    //wxml对象
-    console.log(ana(object_raw));   //将wxml对象解析后得到的wxml源码
+        //解析所有wxml
+        $gwx("ana")()
+
+即可获得源码
