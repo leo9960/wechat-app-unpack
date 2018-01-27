@@ -89,6 +89,8 @@ https://www.bejson.com/convert/ox2str/
 
 ### page-frame.html
 
+2018-01-27更新：由于还原总是不那么完美，便重新写了一个wxml分析器(在wxmlana中)，可以用于对照混淆代码和还原后的代码（感谢q群[211691897]中各位大佬的帮忙）
+
 目前我分析了一小部分代码，写了个解析器，可以手动一个页面一个页面还原出wxml源码，~~但还无法解析变量（就是{{}}这一类的）~~
 
 2018-01-04更新：~~可以解析单变量形式（如{{index}}），但表达式形式的还无法解析~~
@@ -101,19 +103,17 @@ https://www.bejson.com/convert/ox2str/
 
 2018-01-09更新：~~想到一个新思路还原源码，不再需要手动拷贝代码出来，防止变量丢失~~
 
-2018-01-10更新：~~通过多人探讨发现，不同小程序可能由于编译上线时间不同，其中的函数及变量也发生了变化，目前analysis.js中的函数仅支持替换page-frame.html中版本为：
+2018-01-10更新：~~通过多人探讨发现，不同小程序可能由于编译上线时间不同，其中的函数及变量也发生了变化，目前analysis.js中的函数仅支持替换page-frame.html中版本为：~~
 
     window.__wcc_version__ = 'v0.6vv_20170905_fbi_wxs'
 
-~~如有其他版本的请将版本号以及对应的小程序名称发至Issues中，我会抽时间来研究
+~~如有其他版本的请将版本号以及对应的小程序名称发至Issues中，我会抽时间来研究~~
 
-2018-01-27更新：由于还原总是不那么完美，便重新写了一个wxml分析器，可以用于对照混淆代码和还原后的代码（感谢q群[211691897]中各位大佬的帮忙）
-
-~~打开page-frame.html，将文件夹（wxmlana）下的ana.js引入
+~~打开page-frame.html，将文件夹（wxmlana）下的ana.js引入~~
 
         <script src="ana.js"></script>
 
-~~打开文件夹（wxmlana）下的analysis.js，按照对应的函数名称，替换page-frame.html中的函数
+~~打开文件夹（wxmlana）下的analysis.js，按照对应的函数名称，替换page-frame.html中的函数~~
 
         //原page-frame.html中的名称：
         function _v(k) {...}
@@ -122,13 +122,13 @@ https://www.bejson.com/convert/ox2str/
         function wfor(to_iter, func, env, _s, global, father, itemname, indexname, keyname, o){...}
         if (path && e_[path]) {...}
 
-~~注释掉page-frame.html中的 nf_init() ：
+~~注释掉page-frame.html中的 nf_init() ：~~
 
         ...
         //nf_init();
         ...
 
-~~在chrome中打开page-frame.html，在控制台（console）中输入：
+~~在chrome中打开page-frame.html，在控制台（console）中输入：~~
 
         //解析单个wxml
         $gwx("...wxml地址...")();        //例如$gwx("./page/API/index.wxml")();
@@ -136,11 +136,11 @@ https://www.bejson.com/convert/ox2str/
         //解析所有wxml
         $gwx("ana")()
 
-~~即可获得源码
+~~即可获得源码~~
 
-#### ~~已知问题
+#### ~~已知问题~~
 
-~~1.template模块组件会被自动加载进源码中
+~~1.template模块组件会被自动加载进源码中~~
 
-~~2.会无视带有 wx:if 的组件，但其子组件还是会被还原出来的
+~~2.会无视带有 wx:if 的组件，但其子组件还是会被还原出来的~~
 
