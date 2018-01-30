@@ -95,6 +95,7 @@ https://www.bejson.com/convert/ox2str/
 
     v0.6vv_20170214_fbi
 	v0.6vv_20170919_fbi_wxs
+	v0.6vv_20171120_cua_xc
     v0.6vv_20171201_cua_xc
     v0.6vv_20171208_cua_xc
     v0.6vv_20180104_fbi
